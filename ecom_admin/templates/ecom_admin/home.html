@@ -1,13 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    home page of ecom admin
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{% static 'style/admin_home_style.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'style/admin_home_style.css' %}">
+    <title>Admin_Home</title>
     
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="grid-container">
+            
+                <div class="item1"><a href="{% url 'ecom_admin:approve sellers' %}">APPROVE SELLER</a></div>
+                <div class="item2"><a href="{% url 'ecom_admin:view sellers' %}">VIEW SELLER</a></div>
+                <div class="item3"><a href="{% url 'ecom_admin:view customers' %}">VIEW CUSTOMER</a></div>
+                <div class="item4"><a href="{% url 'ecom_admin:view orders' %}">VIEW ORDERS</a></div>
+                <div class="item5"><a href="{% url 'ecom_admin:recent updates' %}">RECENT UPDATES</a></div>
+                <div class="item6"><a href="{% url 'ecom_admin:view products' %}">VIEW PRODUCTS</a></div>
+                <div class="item7"><a href="{% url 'ecom_admin:remove customer' %}">REMOVE CUSTOMER</a></div>
+                <div class="item8"><a href="{% url 'ecom_admin:remove seller' %}">REMOVE SELLER</a></div>
+                <div class="item9"><a href="{% url 'ecom_admin:remove product' %}">REMOVE PRODUCT</a></div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

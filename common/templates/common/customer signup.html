@@ -1,12 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    customer signup
-</body>
-</html>
+{% extends 'common/master_common.html' %}
+{% load static %}
+{% block title %}
+<title>Customer Registration</title>
+{% endblock %}
+
+
+{% block content %}
+<div  style="background-color: rgb(103, 178, 190); ">
+    <div class="container" style="display: grid;  justify-content: center;">
+        <h1 style="color: rgb(48, 91, 91);">
+            <b><u>CUSTOMER REGISTRATION</u></b>
+        </h1>
+        <form action="" method="POST" style="display: grid;  justify-content: center;">
+            {% csrf_token %}
+            <div>
+                <label for="input_name" style="color: white;">Your Name</label>
+                <input type="text" class="form-control" id="input_name" placeholder="Enter Your Name"
+                    style="width: 400px;" name="your_name">
+            </div>
+            <div>
+                <label for="input_mobile" class="form-label" style="color: white;">Your Mobile Number</label>
+                <input type="text" class="form-control" id="input_mobile" placeholder="Enter Your Mobile Number"
+                    style="width: 400px" name="mobile_number">
+            </div>
+            <div>
+                <label for="inputEmail4" class="form-label" style="color: white;">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Enter your E-mail Address"
+                    style="width: 400px;" name="email">
+            </div>
+            <div>
+                <label for="inputPassword4" class="form-label" style="color: white;">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Atleast 6 characters"
+                    style="width: 400px;" name="password">
+            </div>
+            <br>
+            <div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div><br>
+            <h6 style="color: white;">
+                By enrolling your mobile phone number,you consent to <br> recieve automated security notifications
+                via
+                text <br> message from amazon.message and data <br> rates may apply.
+            </h6>
+        </form>
+    </div>
+</div>
+{% endblock %}

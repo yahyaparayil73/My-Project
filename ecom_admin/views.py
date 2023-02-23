@@ -11,3 +11,21 @@ def view_customers(request):
 
 def view_sellers(request):
     return render(request,'ecom_admin/view sellers.html')
+
+def view_orders(request):
+    return render(request,'ecom_admin/view orders.html')
+
+def recent_updates(request):
+    return render(request,'ecom_admin/recent updates.html')
+
+def view_products(request):
+    return render(request,'ecom_admin/view products.html')
+
+def remove_customer(request):
+    return render(request,'ecom_admin/remove customer.html')
+
+def remove_seller(request):
+    return render(request,'ecom_admin/remove seller.html')
+
+def remove_product(request):
+    return render(request,'ecom_admin/remove product.html')
