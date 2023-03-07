@@ -57,16 +57,16 @@ def product_catalogue(request):
 
 
 def seller_profile(request):
-    seller_details = Seller.objects.get(id = request.session['seller'])
-    return render(request, 'seller/seller profile.html',{'seller_profile':seller_details})
+    # seller_details = Seller.objects.get(id = request.session['seller'])
+    return render(request, 'seller/seller profile.html',{'seller_profile':seller_profile})
 
 
 def update_stock(request):
     return render(request, 'seller/update stock.html')
 
 def view_product(request):
-    product = Product.objects.filter(seller_id = request.session['seller'])
-    return render(request, 'seller/view_product.html',{'products': product})
+    # product = Product.objects.filter(seller_id = request.session['seller'])
+    return render(request, 'seller/view_product.html')
 
 
 def view_orders(request):

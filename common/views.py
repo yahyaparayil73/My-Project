@@ -2,8 +2,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from random import randint
 from django.shortcuts import render,redirect
-from common.models import Customers
-from common.models import Seller
+from common.models import Customers,Seller
 from django.http import JsonResponse
 
 
@@ -35,7 +34,9 @@ def customer_signup(request):
         email = request.POST['email']
         password = request.POST['password']
         new_customer = Customers(
-            name=name, mobile_number=mobile_number, email=email, password=password)
+            name=name, 
+            mobile_number=mobile_number, 
+            email=email, password=password)
         new_customer.save()  # corresponding query of insert
     return render(request, 'common/customer signup.html')
 
@@ -111,6 +112,9 @@ def js_calculator(request):
 
 def broto_fb_page(request):
     return render(request, 'common/broto_fb_page.html')
+
+def test(request):
+    return render(request, 'common/test.html')
 
     
 

@@ -6,7 +6,7 @@
 
 
 {% block content %}
-<div  style="background-color: rgb(103, 178, 190); ">
+<div style="background-color: rgb(103, 178, 190);">
     <div class="container" style="display: grid;  justify-content: center;">
         <h1 style="color: rgb(48, 91, 91);">
             <b><u>CUSTOMER REGISTRATION</u></b>
@@ -15,27 +15,30 @@
             {% csrf_token %}
             <div>
                 <label for="input_name" style="color: white;">Your Name</label>
-                <input type="text" class="form-control" id="input_name" placeholder="Enter Your Name"
+                <span id="name_error_msg_id" style="display: inline;color: red;"></span>
+                <input type="text" class="form-control" id="cust_name" placeholder="Enter Your Name"
                     style="width: 400px;" name="your_name">
             </div>
             <div>
                 <label for="input_mobile" class="form-label" style="color: white;">Your Mobile Number</label>
-                <input type="text" class="form-control" id="input_mobile" placeholder="Enter Your Mobile Number"
+                <input type="text" class="form-control" id="cust_mobile" placeholder="Enter Your Mobile Number"
                     style="width: 400px" name="mobile_number">
             </div>
             <div>
                 <label for="inputEmail4" class="form-label" style="color: white;">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Enter your E-mail Address"
+                <input type="email" class="form-control" id="cust_email" placeholder="Enter your E-mail Address"
                     style="width: 400px;" name="email">
             </div>
             <div>
                 <label for="inputPassword4" class="form-label" style="color: white;">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Atleast 6 characters"
+                <input type="password" class="form-control" id="cust_password" placeholder="Atleast 6 characters"
                     style="width: 400px;" name="password">
+                <p id="empty_error_msg_id" style="display: inline; color: red;"></p>
+
             </div>
             <br>
             <div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="button" class="btn btn-primary" onclick="return customer_validation()">Sign Up</button>
             </div><br>
             <h6 style="color: white;">
                 By enrolling your mobile phone number,you consent to <br> recieve automated security notifications
@@ -45,4 +48,47 @@
         </form>
     </div>
 </div>
+<script>
+
+    var cust_name = document.getElementById('cust_name');
+    var cust_mobile = document.getElementById('cust_mobile').value;
+    var cust_email = document.getElementById('cust_email').value;
+    var cust_password = document.getElementById('cust_password').value;
+    var s_name = document.getElementById('name_error_msg_id')
+
+    function customer_validation() {
+
+
+
+        if (cust_name.value == "") {                                                       //if nothing is entered in the email field
+            console.log("if null")
+            s_name.innerHTML = "Username must be filled out"; //required error message is inserted to the particular input text
+            document.getElementById('cust_name').style.border = '1px solid red';                      //to make the input field's border in to reddish colour
+            return false;
+
+        } 
+        else{
+            console.log("not null")
+            s_name.innerHTML = '';                           //since the condition is false the form gets submitted                      
+            document.getElementById('cust_name').style.border = '';                      //to make the input field's border in to reddish colour
+
+
+        }
+
+        // if (cust_name.length < 8) {                                      //if nothing is entered in the email field
+
+        //     document.getElementById('name_error_msg_id').innerHTML = "must be atleast 8 characters"; //required error message is inserted to the particular input text
+        //     document.getElementById('cust_name').style.border =  '1px solid red';                      //to make the input field's border in to reddish colour
+        //     return false;
+
+        // } else {
+
+        //     document.getElementById('name_error_msg_id').innerHTML = "";                           //since the condition is false the form gets submitted
+        //     document.getElementById('cust_name').style.border = "";
+
+        // }
+
+    }
+
+</script>
 {% endblock %}
