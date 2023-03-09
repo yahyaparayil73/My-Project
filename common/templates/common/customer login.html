@@ -9,8 +9,9 @@
         <h1 style="color: rgb(48, 48, 91);">
             <b><u>CUSTOMER LOGIN</u></b>
         </h1><br>
-        <form action="" method="POST">
+        <form method="POST">
             {% csrf_token %}
+            {{message}}
             <div>
                 <label for="inputEmail4" class="form-label" style="color: white;">Email</label>
                 <input type="email" class="form-control" id="inputEmail4" placeholder="Enter your E-mail Address"
@@ -26,7 +27,6 @@
             <br>
             <div>
                 <button type="submit" class="btn btn-success" a>Login</button>
-                {{ message }}
             </div><br>
             <h6 style="color: white;">
                 By continuing, you agree to Shop-E-huB's <br> <a href="#conditions_of_use"

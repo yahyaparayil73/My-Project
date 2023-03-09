@@ -23,8 +23,6 @@ urlpatterns = [
     path('customer/', include('customer.urls')),
     path('common/', include('common.urls')),
     path('ecom_admin/', include('ecom_admin.urls')),
-    path('seller/', include('seller.urls')),
-    path('ecomapi/', include('ecomapi.urls'))
-    
+    path('seller/', include('seller.urls')),    
 
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

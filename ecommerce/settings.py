@@ -13,9 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
-import mimetypes
-mimetypes.add_type("text/css",".css",True)
-mimetypes.add_type("text/js",".js",True)
+# import mimetypes
+# mimetypes.add_type("text/css",".css",True)
+# mimetypes.add_type("text/js",".js",True)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,6 +30,7 @@ SECRET_KEY = 'django-insecure-l$*$=-t29g_p#55s#6lzg3s_^^f#@lrn_@t3td#_=m7xb))p3k
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,7 +42,6 @@ INSTALLED_APPS = [
     'common',
     'seller',
     'ecom_admin',
-    'ecomapi',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ecommercesample',
+        'NAME': 'ecommerce_crud',
         'USER': 'postgres',
         'PASSWORD': 'yahya123',
         'HOST' : 'localhost',
@@ -141,6 +141,8 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'customer/static'),
     os.path.join(BASE_DIR,'common/static'),
 ]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

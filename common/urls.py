@@ -10,10 +10,7 @@ urlpatterns = [
     path('sellerlogin', views.seller_login, name='seller_login'),
     path('sellersignup', views.seller_signup, name='seller_signup'),
     path('mastercommon', views.master_common, name='master_common'),
-    path('js_calculator', views.js_calculator, name='js_calculator'),
-    path('broto_fb_page', views.broto_fb_page, name='broto_fb_page'),
     path('test', views.test, name='test'),
-
 
 
 ]

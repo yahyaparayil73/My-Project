@@ -13,6 +13,7 @@
         </h1><br>
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
+            {{message}}
             <div>
                 <label for="input_name" style="color: white;">Your Name</label>
                 <input type="text" class="form-control" id="input_name" placeholder="Enter Your Name"
@@ -20,7 +21,7 @@
             </div>
             <div>
                 <label for="input_mobile" class="form-label" style="color: white;">Your Mobile Number</label>
-                <input type="text" class="form-control" id="input_mobile" placeholder="Enter Your Mobile Number"
+                <input type="number" class="form-control" id="input_mobile" placeholder="Enter Your Mobile Number"
                     style="width: 400px" name="seller_mobile" ;>
             </div>
             <div>
@@ -29,9 +30,19 @@
                     style="width: 400px;" name="seller_email">
             </div>
             <div>
+                <label for="inputEmail4" class="form-label" style="color: white;">address</label>
+                <input type="text" class="form-control" id="inputEmail" placeholder="Enter your Address"
+                    style="width: 400px;" name="seller_address">
+            </div>
+            <div>
                 <label for="input_bank_name" style="color: white;">Bank Name</label>
                 <input type="text" class="form-control" id="input_bank_name" placeholder="Enter Your Bank Name"
                     style="width: 400px;" name="seller_bank_name">
+            </div>
+            <div>
+                <label for="acc_name" style="color: white;">Account Number</label>
+                <input type="number" class="form-control" id="account_number" placeholder="Enter Your Account Number"
+                    style="width: 400px;" name="seller_account_number">
             </div>
             <div>
                 <label for="input_branch" class="form-label" style="color: white;">Bank Branch</label>
@@ -44,14 +55,13 @@
                     style="width: 400px" name="seller_ifsc">
             </div><br>
             <div class="input-group mb-3">
-                <input type="FILE" class="form-control" id="inputGroupFile02" name="seller_pic">
+                <input type="file" class="form-control" id="inputGroupFile02" name="seller_pic">
                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
             </div>
             <br>
             <div>
                 <button type="submit" class="btn btn-primary">Sign Up</button>
             </div><br>
-            {{ message }}
         </form>
     </div>
 </div>

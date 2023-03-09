@@ -16,6 +16,7 @@
         </h1><br>
         <form action="" method="POST">
             {% csrf_token %}
+            {{message}}
             <div>
                 <label for="inputEmail4" class="form-label" style="color: white;">User Name</label>
                 <input type="text" class="form-control" id="inputEmail4" placeholder="Enter your User Name"
@@ -31,7 +32,6 @@
             <br>
             <div>
                 <button type="submit" class="btn btn-warning text-light">Login</button>
-                {{ message }}
             </div><br>
         </form>
     </div>
